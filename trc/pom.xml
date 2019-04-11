@@ -8,15 +8,21 @@
 		<version>2.1.4.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
+
 	<groupId>com.sree</groupId>
-	<artifactId>trcframework</artifactId>
+	<artifactId>trc</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>trcframework</name>
-	<description>Demo project for Spring Boot</description>
+	<name>trc</name>
+	<description>Task Runner Central</description>
 
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
+
+	<modules>
+		<module>framework</module>
+		<module>implementation</module>
+	</modules>
 
 	<dependencies>
 		<dependency>
@@ -49,6 +55,12 @@
 		</dependency>
 
 		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-expression</artifactId>
+			<version>5.1.6.RELEASE</version>
+		</dependency>
+
+		<dependency>
 			<groupId>com.google.guava</groupId>
 			<artifactId>guava</artifactId>
 			<version>27.1-jre</version>
@@ -73,6 +85,11 @@
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.12</version>
 		</dependency>
 	</dependencies>
 
