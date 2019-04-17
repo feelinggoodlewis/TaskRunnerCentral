@@ -10,15 +10,15 @@ public abstract class Task {
 
     private long taskId;
     private String taskName;
-    private List<TaskParameter> taskParameterList;
+    private List<Parameter> ParameterList;
     private boolean editable;
     private boolean continueOnFailure;
     private int executionSequenceNumber;
     private String runParameter;
 
-    public Task(long taskId, List<TaskParameter> taskParameterList, String taskName, boolean editable, boolean continueOnFailure, int executionSequenceNumber, String runParameter) {
+    public Task(long taskId, List<Parameter> ParameterList, String taskName, boolean editable, boolean continueOnFailure, int executionSequenceNumber, String runParameter) {
         this.taskId = taskId;
-        this.taskParameterList = taskParameterList;
+        this.ParameterList = ParameterList;
         this.taskName = taskName;
         this.editable = editable;
         this.continueOnFailure = continueOnFailure;
@@ -30,8 +30,8 @@ public abstract class Task {
         return taskId;
     }
 
-    public List<TaskParameter> getTaskParameterList() {
-        return taskParameterList;
+    public List<Parameter> getParameterList() {
+        return ParameterList;
     }
 
     public String getTaskName() {

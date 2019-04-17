@@ -4,7 +4,7 @@ package com.sree.trc.framework.domain;
  * Any parameter that would be used while executing a task, task set or task pack
  */
 
-public abstract class Parameter{
+public class Parameter{
 
     private long parameterId;
     private String parameterName;
