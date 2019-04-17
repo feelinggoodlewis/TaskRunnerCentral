@@ -1,4 +1,4 @@
-package com.sree.trc.framework.domain;
+package com.sree;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;

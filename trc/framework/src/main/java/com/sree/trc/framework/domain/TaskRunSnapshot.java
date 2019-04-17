@@ -12,6 +12,7 @@ public abstract class TaskRunSnapshot {
     private int executionSequenceNumber;
     private boolean editable;
     private String runParameter;
+    private RunStatus runStatus;
 
     public TaskRunSnapshot(long taskRunSnapshotId, Task task, String environment, boolean continueOnFailure, int executionSequenceNumber, boolean editable, String runParameter) {
         this.taskRunSnapshotId = taskRunSnapshotId;
@@ -59,5 +60,13 @@ public abstract class TaskRunSnapshot {
 
     public String getRunParameter() {
         return runParameter;
+    }
+
+    public RunStatus getRunStatus() {
+        return runStatus;
+    }
+
+    public void setRunStatus(RunStatus runStatus) {
+        this.runStatus = runStatus;
     }
 }

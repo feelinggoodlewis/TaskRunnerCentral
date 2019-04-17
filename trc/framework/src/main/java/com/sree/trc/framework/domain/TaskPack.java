@@ -11,10 +11,9 @@ public abstract class TaskPack {
 
     private List<TaskSet> taskSetList;
 
-    public TaskPack(long taskPackId, String taskPackName, List<Parameter> taskPackParameterList, List<TaskSet> taskSetList) {
+    public TaskPack(long taskPackId, String taskPackName, List<Parameter> taskPackParameterList) {
         this.taskPackId = taskPackId;
         this.taskPackName = taskPackName;
-        this.taskSetList = taskSetList;
     }
 
     public long getTaskPackId() {
@@ -27,5 +26,9 @@ public abstract class TaskPack {
 
     public List<TaskSet> getTaskSetList() {
         return taskSetList;
+    }
+
+    public void setTaskSetList(List<TaskSet> taskSetList) {
+        this.taskSetList = taskSetList;
     }
 }
