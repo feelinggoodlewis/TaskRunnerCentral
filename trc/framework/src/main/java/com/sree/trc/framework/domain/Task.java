@@ -1,6 +1,7 @@
 package com.sree.trc.framework.domain;
 
 import java.util.List;
+import java.util.UUID;
 
 /**
  * Backbone of TRC. This is the class that is executed as part of every job.
@@ -8,26 +9,22 @@ import java.util.List;
 
 public abstract class Task {
 
-    private long taskId;
+    private UUID taskId;
     private String taskName;
+    private String taskDescription;
     private List<Parameter> ParameterList;
     private boolean editable;
-    private boolean continueOnFailure;
-    private int executionSequenceNumber;
-    private String runParameter;
 
-    public Task(long taskId, List<Parameter> ParameterList, String taskName, boolean editable, boolean continueOnFailure, int executionSequenceNumber, String runParameter) {
-        this.taskId = taskId;
+
+    public Task(List<Parameter> ParameterList, String taskName, boolean editable, String taskDescription) {
         this.ParameterList = ParameterList;
         this.taskName = taskName;
         this.editable = editable;
-        this.continueOnFailure = continueOnFailure;
-        this.executionSequenceNumber = executionSequenceNumber;
-        this.runParameter = runParameter;
+        this.taskDescription = taskDescription;
     }
 
-    public long getTaskId() {
-        return taskId;
+    public Task(String taskName, List<Parameter> parameterList){
+        this(parameterList, taskName, true, "");
     }
 
     public List<Parameter> getParameterList() {
@@ -42,15 +39,15 @@ public abstract class Task {
         return editable;
     }
 
-    public boolean isContinueOnFailure() {
-        return continueOnFailure;
+    public String getTaskDescription() {
+        return taskDescription;
     }
 
-    public int getExecutionSequenceNumber() {
-        return executionSequenceNumber;
+    public UUID getTaskId() {
+        return taskId;
     }
 
-    public String getRunParameter() {
-        return runParameter;
+    public void setTaskId(UUID taskId) {
+        this.taskId = taskId;
     }
 }

@@ -1,23 +1,21 @@
 package com.sree.trc.framework.domain;
 import java.util.List;
+import java.util.UUID;
 
 /**
  * Logical collection of Task Sets
  */
 public abstract class TaskPack {
 
-    private long taskPackId;
+    private UUID taskPackId;
     private String taskPackName;
+    List<Parameter> parameterList;
 
     private List<TaskSet> taskSetList;
 
-    public TaskPack(long taskPackId, String taskPackName, List<Parameter> taskPackParameterList) {
-        this.taskPackId = taskPackId;
+    public TaskPack(String taskPackName, List<Parameter> taskPackParameterList) {
         this.taskPackName = taskPackName;
-    }
-
-    public long getTaskPackId() {
-        return taskPackId;
+        this.parameterList = taskPackParameterList;
     }
 
     public String getTaskPackName() {
@@ -30,5 +28,9 @@ public abstract class TaskPack {
 
     public void setTaskSetList(List<TaskSet> taskSetList) {
         this.taskSetList = taskSetList;
+    }
+
+    public List<Parameter> getParameterList() {
+        return parameterList;
     }
 }

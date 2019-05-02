@@ -1,25 +1,29 @@
 package com.sree.trc.framework.domain;
 
+import java.util.UUID;
+
 /**
  * Stores the snapshot information of a task pack execution
  */
 
 public abstract class TaskPackRunSnapshot {
 
-    private long taskPackRunId;
+    private UUID taskPackRunId;
     private TaskPack taskPack;
 
-    public TaskPackRunSnapshot(long taskPackRunId, TaskPack taskPack) {
-        this.taskPackRunId = taskPackRunId;
+    public TaskPackRunSnapshot(TaskPack taskPack) {
         this.taskPack = taskPack;
-    }
-
-    public long getTaskPackRunId() {
-        return taskPackRunId;
     }
 
     public TaskPack getTaskPack() {
         return taskPack;
     }
 
+    public UUID getTaskPackRunId() {
+        return taskPackRunId;
+    }
+
+    public void setTaskPackRunId(UUID taskPackRunId) {
+        this.taskPackRunId = taskPackRunId;
+    }
 }
