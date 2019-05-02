@@ -1,11 +1,14 @@
 package com.sree.trc.framework.domain;
 
+import java.util.List;
+import java.util.UUID;
+
 /**
  * Stores the snapshot information of a task execution
  */
 public abstract class TaskRunSnapshot {
 
-    private long taskRunSnapshotId;
+    private UUID taskRunSnapshotId;
     private Task task;
     private String environment;
     private boolean continueOnFailure;
@@ -14,8 +17,7 @@ public abstract class TaskRunSnapshot {
     private String runParameter;
     private RunStatus runStatus;
 
-    public TaskRunSnapshot(long taskRunSnapshotId, Task task, String environment, boolean continueOnFailure, int executionSequenceNumber, boolean editable, String runParameter) {
-        this.taskRunSnapshotId = taskRunSnapshotId;
+    public TaskRunSnapshot(Task task, String environment, boolean continueOnFailure, int executionSequenceNumber, boolean editable, String runParameter) {
         this.task = task;
         this.environment = environment;
         this.continueOnFailure = continueOnFailure;
@@ -24,19 +26,6 @@ public abstract class TaskRunSnapshot {
         this.runParameter = runParameter;
     }
 
-    public TaskRunSnapshot(long taskRunSnapshotId, Task task, String environment) {
-        this.taskRunSnapshotId = taskRunSnapshotId;
-        this.task = task;
-        this.environment = environment;
-        this.continueOnFailure = task.isContinueOnFailure();
-        this.executionSequenceNumber = task.getExecutionSequenceNumber();
-        this.editable = task.isEditable();
-        this.runParameter = task.getRunParameter();
-    }
-
-    public long getTaskRunSnapshotId() {
-        return taskRunSnapshotId;
-    }
 
     public Task getTask() {
         return task;
@@ -68,5 +57,13 @@ public abstract class TaskRunSnapshot {
 
     public void setRunStatus(RunStatus runStatus) {
         this.runStatus = runStatus;
+    }
+
+    public UUID getTaskRunSnapshotId() {
+        return taskRunSnapshotId;
+    }
+
+    public void setTaskRunSnapshotId(UUID taskRunSnapshotId) {
+        this.taskRunSnapshotId = taskRunSnapshotId;
     }
 }
